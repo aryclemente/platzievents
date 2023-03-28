@@ -1,0 +1,13 @@
+body{
+    background-color: black !important;
+
+}
+
+p, span, h1, h2, h3, h4, a {
+    color: beige !important; 
+}
+
+h1, h2, h3, h4{
+    background-color: #27a397;
+}
+

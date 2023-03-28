@@ -1,0 +1,98 @@
+/*
+ Theme name: PlatziEvents
+ Version: 1.0
+ Description: Sitio para Eventos de Platzi
+ Author: AryClement
+ Author URI: https://github.com/aryclemente
+ License: GNU General Public Licence v2 or later
+ License: http://www.gnu.org/licenses/gpl-2.0.html
+
+
+
+*/
+
+
+a,h1,h2,h3,h4,li,p,span,ul{
+    font-family:Montserrat
+}
+
+
+
+.attachment-large{
+    max-width:100%;
+    height:auto!important
+}
+
+
+
+h1{
+    margin:50px 0;
+    font-weight: 900;
+
+}
+
+
+
+ul{
+    margin-bottom: 0px;
+}
+
+
+
+header{
+    background-color: #504382;
+}
+
+
+
+header nav li{
+    list-style:none;
+    display:inline-block;
+    padding:0 15px
+}
+
+
+
+header nav li a{
+    color:#fff;
+    text-transform:uppercase
+}
+
+
+
+header nav li a:hover{
+    color:#fff
+}
+
+
+footer{
+    background-color: #504382;
+    padding:10px 0
+}
+
+
+footer{
+    color:white
+}
+
+
+footer p{
+    margin:0;
+    color:#fff
+}
+
+
+.lista-eventos h2{
+    font-weight:900
+}
+
+
+.lista-eventos h4{
+    font-weight:400
+}
+
+
+.lista-eventos h4 a{
+    color:#000
+}
+

@@ -1,12 +1,11 @@
 <?php  get_header();  ?>
     <main class="container my-3">
-        <!-- Ciclo de Eventos -->   
+        <!-- Ciclo de Programas -->   
         <?php 
             if(have_posts()){
                 while(have_posts()){
                     the_post();
-                    $taxonomy = get_the_terms( get_the_ID() , 'categoria-eventos');   
-                        
+                    $taxonomy = get_the_terms( get_the_ID() , 'categoria-programas');   
         ?> 
                 <h1 class='my-3 text-center'> 
                     <?php
@@ -25,34 +24,34 @@
                         ?>
                     </div>
                 </div>
-                <!-- Eventos Relacionados -->
-                <?php $ID_producto_actual = get_the_ID(); ?>
+                <!-- Programas Relacionados -->
+                <?php $ID_programa_actual = get_the_ID(); ?>
                 <?php  $args = array(
-                    'post_type' => 'evento',
+                    'post_type' => 'programa',
                     'posts_per_page' => 3,
-                    'post__not_in'  => array($ID_producto_actual),
+                    'post__not_in'  => array($ID_programa_actual),
                     'order' => 'ASC',
                     'orderby' => 'title', 
                     'tax_query' => array(
                         array(
-                            'taxonomy' => 'categoria-eventos',
+                            'taxonomy' => 'categoria-programas',
                             'field' => 'slug',
                             'terms' => $taxonomy[0]->slug
                         )
                     )
                     
                 );  
-                    $evento = new WP_Query($args);              
+                    $programa = new WP_Query($args);              
                 ?>
 
-                <?php  if($evento->have_posts(  )){ ?> 
-                    <div class="row text-center justify-content-center eventos-relacionados">
+                <?php  if($programa->have_posts(  )){ ?> 
+                    <div class="row text-center justify-content-center programas-relacionados">
                         <div class="col-12">
-                            <h3>Eventos Relacionados</h3>
+                            <h3>Programas Relacionados</h3>
                         </div>
                         
-                        <?php   while($evento->have_posts()){   ?>
-                            <?php   $evento->the_post( );    ?>  
+                        <?php   while($programa->have_posts()){   ?>
+                            <?php   $programa->the_post( );    ?>  
                                 <div class="col-md col-12 my-3 text-center">
                                     <?php   the_post_thumbnail('thumbnail');    ?>
                                      <h4 class='my-2'>
@@ -69,7 +68,7 @@
                 <!-- Navegación -->    
                 <?php get_template_part( 'template-parts/post', 'navigation' ) ?>
 
-            <!-- Fin del Ciclo de Eventos -->
+            <!-- Fin del Ciclo de Programas -->
             <?php     }    ?>   
         <?php  }  ?>
     </main>

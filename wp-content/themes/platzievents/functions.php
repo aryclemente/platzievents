@@ -97,12 +97,49 @@
         register_post_type( 'Programa', $args );
 
     }
-
-    function evRegisterTax(){
-        
-    }
-
+    
     add_action( 'init', 'programas_type');
 
 
+
+    
+    function evRegisterTax(){
+        $args=array(
+            'hierarchical' => true,
+            'labels' => array(
+                'name' => 'Categorías de Eventos',
+                'singular_name' => 'Categoría de Eventos'
+            ),
+            'show_in_menu' => true,
+            'show_admin_column' => true,
+            'rewrite' =>array('slug' => 'categoria-eventos')
+        );
+
+        register_taxonomy('categoria-eventos', array('evento'), $args);
+    }
+
+    add_action( 'init', 'evRegisterTax');
+    
+
+
+
+    function proRegisterTax(){
+        $args=array(
+            'hierarchical' => true,
+            'labels' => array(
+                'name' => 'Categorías de Programas',
+                'singular_name' => 'Categoría de Programas'
+            ),
+            'show_in_menu' => true,
+            'show_admin_column' => true,
+            'rewrite' =>array('slug' => 'categoria-programas')
+        );
+
+        register_taxonomy('categoria-programas', array('programa'), $args);
+
+        
+        
+    }
+    add_action( 'init', 'proRegisterTax');
 ?>
+
